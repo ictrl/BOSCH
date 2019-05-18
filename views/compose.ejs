@@ -1,0 +1,54 @@
+<%-include("header")-%>
+
+<h1>Compose</h1>
+
+<form action="/compose" method="post">
+<label>Title</label>
+    <input class="form-control" type="text" name="title" autofocus>
+<label>Issue</label>
+<textarea name="body" class="form-control" rows="10" ></textarea>
+<br>
+
+<label for="state">Range</label>
+<select class="custom-select d-block w-100" name="range" id="select">
+    <option value="">Choose...</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+</select>
+
+<br>
+
+<hr class="mb-4">
+<div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" name="add" value="first" id="same-address">
+  <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+</div>
+<div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="save-info" name="add" value="second">
+  <label class="custom-control-label" for="save-info">Save this information for next time</label>
+</div>
+<hr class="mb-4">
+
+<div class="d-block my-3">
+    <div class="custom-control custom-radio">
+      <input id="credit" name="paymentMethod" value="1" type="radio" class="custom-control-input" checked required>
+      <label class="custom-control-label" for="credit">Credit card</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input id="debit" name="paymentMethod" type="radio"  value="2" class="custom-control-input" required>
+      <label class="custom-control-label" for="debit">Debit card</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input id="paypal" name="paymentMethod" type="radio"  value="3" class="custom-control-input" required>
+      <label class="custom-control-label" for="paypal">PayPal</label>
+    </div>
+  </div>
+    <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+</form>
+
+<%-include("footer")-%>
